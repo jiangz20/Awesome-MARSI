@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-多智能体递归自我改进相关论文与资源精选。目前收录 **32 篇**，最近核验日期为 **2026-10-30**。
+多智能体递归自我改进相关论文与资源精选。目前收录 **43 篇**，最近核验日期为 **2026-11-08**。
 
 围绕协作架构演化、经验积累与迁移、改进机制递归演化三条主线，同时收录必要的单智能体方法与评测基线。MARSI 在此是组织文献的主题名称，不表示所有条目均提出了完整的多智能体 RSI 系统。
 
@@ -27,9 +27,49 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 **缩写提醒：**MASS (2025) 是 Multi-Agent System Search；MASS (2026) 是 Multi-Agent Self-Supervision。它们是两篇不同论文。
 
+## 本轮新增
+
+2026-11-08 · 11 papers · [Update notes / 更新说明](docs/updates-2026-11-08.md)
+
+| Paper | First submitted | Category |
+|---|---|---|
+| [EvoTeam](https://arxiv.org/abs/2610.39813) | 2026-10-29 | core |
+| [Skill∞](https://arxiv.org/abs/2610.35434) | 2026-10-26 | selfmod |
+| [EvolveMAS](https://arxiv.org/abs/2610.34450) | 2026-10-25 | experience |
+| [Recursia](https://arxiv.org/abs/2610.24464) | 2026-10-17 | selfmod |
+| [AGORA](https://arxiv.org/abs/2610.19799) | 2026-10-14 | core |
+| [RSI-Forge](https://arxiv.org/abs/2610.09426) | 2026-10-07 | evaluation |
+| [Inherit-MAS](https://arxiv.org/abs/2610.02396) | 2026-10-01 | workflow |
+| [MILO](https://arxiv.org/abs/2609.38349) | 2026-09-29 | core |
+| [MANTA](https://arxiv.org/abs/2607.28527) | 2026-07-30 | workflow |
+| [HarnessForge](https://arxiv.org/abs/2606.01779) | 2026-06-01 | selfmod |
+| [DecentMem](https://arxiv.org/abs/2605.22721) | 2026-05-21 | experience |
+
 <a id="core"></a>
 
-## 直接相关：多智能体自我改进 (4)
+## 直接相关：多智能体自我改进 (7)
+
+### EvoTeam · 2026-10
+
+**EvoTeam: Multi-Agent Collaboration via Evolving Teams**
+
+[Paper](https://arxiv.org/abs/2610.39813) · [PDF](https://arxiv.org/pdf/2610.39813) · [Code](https://github.com/DEEP-JLU/EvoTeam)
+
+维护可复用团队库，联合演化团队组织、团队专属交互规则及跨团队可复用的个体技能。
+
+- 更新对象 / 评测对象: Reusable teams + interaction rules + agent skills.
+- 证据边界: 核心是协作层面的演化，演化算子自身递归变强是更强的独立主张。
+
+### AGORA · 2026-10
+
+**Evolve Together, Fall into Place: How Social Scaffolding Shapes Self-Evolving Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2610.19799) · [PDF](https://arxiv.org/pdf/2610.19799)
+
+分别改变团队构成与协作、从众、竞争等关系，研究社会组织方式如何影响团队演化及领导权分配。
+
+- 更新对象 / 评测对象: Team composition + social scaffolding.
+- 证据边界: 研究团队演化的条件，不代表所有演化团队都会进步或趋于去中心化。
 
 ### MASS (2026) · 2026-10
 
@@ -52,6 +92,17 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 - 更新对象 / 评测对象: Data strategies + shared memory + target weights.
 - 证据边界: 需要区分目标模型的进步与研究智能体自身改进能力的进步。
+
+### MILO · 2026-09
+
+**MILO: Automated Harness Discovery via Orchestrated Multi-Agent Evolution**
+
+[Paper](https://arxiv.org/abs/2609.38349) · [PDF](https://arxiv.org/pdf/2609.38349)
+
+结合岛屿谱系记忆、修改智能体与编排器，同时演化完整 harness 及其发现策略，并利用被拒绝变异作为负面证据。
+
+- 更新对象 / 评测对象: Harnesses + discovery strategy.
+- 证据边界: 需要在匹配预算下区分搜索的共同适应与改进器可迁移的能力提升。
 
 ### RHI · 2026-07
 
@@ -77,7 +128,29 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 <a id="workflow"></a>
 
-## 工作流与团队结构演化 (6)
+## 工作流与团队结构演化 (8)
+
+### Inherit-MAS · 2026-10
+
+**Inherit-MAS: Test-Time Evolution of Multi-Agent Systems through Workflow and Execution Inheritance**
+
+[Paper](https://arxiv.org/abs/2610.02396) · [PDF](https://arxiv.org/pdf/2610.02396)
+
+通过经验证的编辑继承并修订工作流，仅在完整请求与执行上下文匹配时复用结果，减少重复执行。
+
+- 更新对象 / 评测对象: Workflow edits + execution-result reuse.
+- 证据边界: 执行结果缓存和测试时工作流修订，不证明跨任务改进器能力提升。
+
+### MANTA · 2026-07
+
+**MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2607.28527) · [PDF](https://arxiv.org/pdf/2607.28527)
+
+利用已有结构经验初始化拓扑，并在执行中有界调整角色、通信、顺序、信息可见性与验证路径。
+
+- 更新对象 / 评测对象: Communication topology + roles.
+- 证据边界: 推理时结构自适应不自动等于持久的改进器递归增强。
 
 ### MAS-ZERO · 2025-05
 
@@ -147,7 +220,18 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 <a id="experience"></a>
 
-## 经验、记忆与技能继承 (3)
+## 经验、记忆与技能继承 (5)
+
+### EvolveMAS · 2026-10
+
+**EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2610.34450) · [PDF](https://arxiv.org/pdf/2610.34450)
+
+为主智能体配置 MemoryAgent，结合回合内记忆治理与跨回合伙伴画像、交互策略提炼，支持合作及对抗场景。
+
+- 更新对象 / 评测对象: Per-agent memory governance + interaction knowledge.
+- 证据边界: 无参数更新的经验演化，并不单独识别记忆更新机制或优化流程自身是否变强。
 
 ### Skill-MAS · 2026-06
 
@@ -159,6 +243,17 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 - 更新对象 / 评测对象: Orchestration meta-skill.
 - 证据边界: 编排知识持续积累，本身不足以证明优化器的改进能力增强。
+
+### DecentMem · 2026-05
+
+**Self-Evolving Multi-Agent Systems via Decentralized Memory**
+
+[Paper](https://arxiv.org/abs/2605.22721) · [PDF](https://arxiv.org/pdf/2605.22721)
+
+每个智能体维护利用与探索两个记忆池，依据阶段性评价反馈调整权重，以保留独立经验与多样性。
+
+- 更新对象 / 评测对象: Decentralized agent memories.
+- 证据边界: 记忆自适应并不单独证明改进流程本身变强。
 
 ### Voyager · 2023-05
 
@@ -184,7 +279,29 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 <a id="selfmod"></a>
 
-## 自身代码修改与模型适应 (6)
+## 自身代码修改与模型适应 (9)
+
+### Skill∞ · 2026-10
+
+**Skill∞: Recursive Self-Improvement for Agent Skill Optimization**
+
+[Paper](https://arxiv.org/abs/2610.35434) · [PDF](https://arxiv.org/pdf/2610.35434)
+
+元智能体按 Meta-Skill 优化任务技能，再用同一流程优化 Meta-Skill 本身，允许修改诊断、审查和预算分配步骤。
+
+- 更新对象 / 评测对象: Task skills + optimizer meta-skill.
+- 证据边界: 直接面向改进流程自身；广泛持续收益及多智能体协作的独立贡献仍需另行检验。
+
+### Recursia · 2026-10
+
+**Learning to Compose: Recursive Self-Improvement of Shared Executable Stacks for Zero-Shot Long-Horizon Robot Manipulation**
+
+[Paper](https://arxiv.org/abs/2610.24464) · [PDF](https://arxiv.org/pdf/2610.24464)
+
+对共享工具、技能契约、交接与验证器组成的执行栈进行故障归因、修复和回归筛选，再冻结用于新任务迁移。
+
+- 更新对象 / 评测对象: Shared tools, skill contracts and verifiers.
+- 证据边界: 属于机器人编程与迁移参照；共享组件本身不等于协作的多智能体系统。
 
 ### AIDE² · 2026-09
 
@@ -207,6 +324,17 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 - 更新对象 / 评测对象: Harness components + training records.
 - 证据边界: 摘要仅评估一轮演化，持续共进化属于更强的待验证主张。
+
+### HarnessForge · 2026-06
+
+**HarnessForge: Joint Harness and Policy Evolution for Adaptive Agent Systems**
+
+[Paper](https://arxiv.org/abs/2606.01779) · [PDF](https://arxiv.org/pdf/2606.01779) · [Code](https://github.com/mingju-c/HarnessForge)
+
+通过故障驱动的 harness 调整和以 harness 为条件的策略对齐，联合演化执行结构与推理策略。
+
+- 更新对象 / 评测对象: Harness + reasoning policy.
+- 证据边界: 联合适应与 RSI 相关，但持续的改进器能力提升仍需单独证据。
 
 ### SEAL · 2025-06
 
@@ -313,7 +441,18 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 <a id="evaluation"></a>
 
-## 基准与评测 (8)
+## 基准与评测 (9)
+
+### RSI-Forge · 2026-10
+
+**RSI-Forge: From Research Papers to Environments for Recursive Self-Improvement**
+
+[Paper](https://arxiv.org/abs/2610.09426) · [PDF](https://arxiv.org/pdf/2610.09426)
+
+通过构建、复现与审查智能体，将论文转为可执行研究环境；评测继承代码和笔记后的连续改进尝试。
+
+- 更新对象 / 评测对象: Research environments + evaluators.
+- 证据边界: 主要贡献是环境构建与评测；固定权重下连续解题提升不足以单独证明改进器递归增强。
 
 ### RSIBench-Data · 2026-07
 

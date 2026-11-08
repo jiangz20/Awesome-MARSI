@@ -22,3 +22,7 @@ The general web-search service was unavailable during this pass, and the arXiv s
 `data/papers.json` is the source of truth for entries. Update it, run `python3 scripts/build.py`, then `python3 scripts/build.py --check`. Keep English and Chinese annotations concise and distinguish the demonstrated update mechanism from stronger recursive-improvement interpretations. Do not copy full abstracts into the collection.
 
 分类以方法机制为主，不以论文标题中是否出现 “self-improving” 为唯一依据。新增条目应给出一手来源和相关性说明；缺少代码链接不代表代码不存在。所有条目均可随新版本和更充分证据修订。
+
+## Update: 2026-11-08
+
+The initial snapshot above is retained as historical provenance. The collection now contains 43 papers after adding 11 first submitted within 2026-05-08–2026-11-08. A working search connector enabled broader discovery in this update; all included additions were checked against primary arXiv pages. Two more paper-linked code repositories were confirmed with the GitHub API (11 code links total). See [update notes](updates-2026-11-08.md) for selection, exclusions and search limitations. Per-entry verification dates distinguish new checks from the initial collection; the latest README date does not mean all older records were rechecked.

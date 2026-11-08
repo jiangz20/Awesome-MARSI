@@ -13,15 +13,16 @@ CATEGORIES = [
 ]
 
 def render(papers, zh=False):
+    verified = max(p['verified_on'] for p in papers)
     lines = ['# Awesome-MARSI', '', '**Multi-Agent Recursive Self-Improvement**', '',
              '[English](README.md) | [简体中文](README.zh-CN.md)', '']
     if zh:
-        lines += [f'多智能体递归自我改进相关论文与资源精选。目前收录 **{len(papers)} 篇**，最近核验日期为 **2026-10-30**。', '',
+        lines += [f'多智能体递归自我改进相关论文与资源精选。目前收录 **{len(papers)} 篇**，最近核验日期为 **{verified}**。', '',
                   '围绕协作架构演化、经验积累与迁移、改进机制递归演化三条主线，同时收录必要的单智能体方法与评测基线。MARSI 在此是组织文献的主题名称，不表示所有条目均提出了完整的多智能体 RSI 系统。', '',
                   '**范围与证据：**单次答案反思、测试时团队搜索、跨任务技能继承、权重更新和改进器更新属于不同机制。各条目的边界说明用于防止混淆；论文的自述不等于独立复现。此列表是精选起点，不是穷尽性系统综述。', '',
                   '## 导航', '']
     else:
-        lines += [f'A curated collection of papers and resources on multi-agent recursive self-improvement. **{len(papers)} papers**, last verified **2026-10-30**.', '',
+        lines += [f'A curated collection of papers and resources on multi-agent recursive self-improvement. **{len(papers)} papers**, last verified **{verified}**.', '',
                   'The collection follows three themes: evolving collaboration architectures, accumulating transferable experience, and improving the improvement process itself. It also includes relevant single-agent methods and evaluation baselines. MARSI is an organizing topic here, not a claim that every entry implements full multi-agent RSI.', '',
                   '**Scope and evidence:** output refinement, inference-time team search, persistent skill inheritance, weight updates, and optimizer updates are different mechanisms. Each entry states an interpretation boundary. Author-reported findings are not independent reproductions. This is a curated starting point, not an exhaustive systematic review.', '',
                   '## Contents', '']
@@ -30,6 +31,14 @@ def render(papers, zh=False):
               '## 建议先读' if zh else '## Start here', '',
               'MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → Darwin Gödel Machine → RSIBench-Data.', '',
               '**缩写提醒：**MASS (2025) 是 Multi-Agent System Search；MASS (2026) 是 Multi-Agent Self-Supervision。它们是两篇不同论文。' if zh else '**Acronym collision:** MASS (2025) means Multi-Agent System Search; MASS (2026) means Multi-Agent Self-Supervision. These are different papers.', '']
+    recent = sorted([p for p in papers if p.get('added_on') == verified], key=lambda p:p['first_submitted'], reverse=True)
+    if recent:
+        lines += ['## 本轮新增' if zh else '## Latest additions', '',
+                  f"{verified} · {len(recent)} papers · [Update notes / 更新说明](docs/updates-2026-11-08.md)", '',
+                  '| Paper | First submitted | Category |', '|---|---|---|']
+        for p in recent:
+            lines.append(f"| [{p['short_name']}]({p['paper_url']}) | {p['first_submitted']} | {p['category']} |")
+        lines += ['']
     for key,en,cn in CATEGORIES:
         subset=sorted([p for p in papers if p['category']==key],key=lambda p:p['first_submitted'],reverse=True)
         lines += [f'<a id="{key}"></a>', '', f'## {cn if zh else en} ({len(subset)})', '']

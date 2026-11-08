@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-A curated collection of papers and resources on multi-agent recursive self-improvement. **32 papers**, last verified **2026-10-30**.
+A curated collection of papers and resources on multi-agent recursive self-improvement. **43 papers**, last verified **2026-11-08**.
 
 The collection follows three themes: evolving collaboration architectures, accumulating transferable experience, and improving the improvement process itself. It also includes relevant single-agent methods and evaluation baselines. MARSI is an organizing topic here, not a claim that every entry implements full multi-agent RSI.
 
@@ -27,9 +27,49 @@ MASS (2026) → Gödel Forest → RHI → Multi-Agent Evolve → Skill-MAS → D
 
 **Acronym collision:** MASS (2025) means Multi-Agent System Search; MASS (2026) means Multi-Agent Self-Supervision. These are different papers.
 
+## Latest additions
+
+2026-11-08 · 11 papers · [Update notes / 更新说明](docs/updates-2026-11-08.md)
+
+| Paper | First submitted | Category |
+|---|---|---|
+| [EvoTeam](https://arxiv.org/abs/2610.39813) | 2026-10-29 | core |
+| [Skill∞](https://arxiv.org/abs/2610.35434) | 2026-10-26 | selfmod |
+| [EvolveMAS](https://arxiv.org/abs/2610.34450) | 2026-10-25 | experience |
+| [Recursia](https://arxiv.org/abs/2610.24464) | 2026-10-17 | selfmod |
+| [AGORA](https://arxiv.org/abs/2610.19799) | 2026-10-14 | core |
+| [RSI-Forge](https://arxiv.org/abs/2610.09426) | 2026-10-07 | evaluation |
+| [Inherit-MAS](https://arxiv.org/abs/2610.02396) | 2026-10-01 | workflow |
+| [MILO](https://arxiv.org/abs/2609.38349) | 2026-09-29 | core |
+| [MANTA](https://arxiv.org/abs/2607.28527) | 2026-07-30 | workflow |
+| [HarnessForge](https://arxiv.org/abs/2606.01779) | 2026-06-01 | selfmod |
+| [DecentMem](https://arxiv.org/abs/2605.22721) | 2026-05-21 | experience |
+
 <a id="core"></a>
 
-## Direct multi-agent self-improvement (4)
+## Direct multi-agent self-improvement (7)
+
+### EvoTeam · 2026-10
+
+**EvoTeam: Multi-Agent Collaboration via Evolving Teams**
+
+[Paper](https://arxiv.org/abs/2610.39813) · [PDF](https://arxiv.org/pdf/2610.39813) · [Code](https://github.com/DEEP-JLU/EvoTeam)
+
+Maintains a team library and jointly evolves team organization, team-specific interaction rules and skills reusable across teams.
+
+- Update / evaluation target: Reusable teams + interaction rules + agent skills.
+- Interpretation boundary: Collaboration-level evolution is central, but recursive improvement of the evolution operator is a stronger separate claim.
+
+### AGORA · 2026-10
+
+**Evolve Together, Fall into Place: How Social Scaffolding Shapes Self-Evolving Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2610.19799) · [PDF](https://arxiv.org/pdf/2610.19799)
+
+Studies how team composition and collaboration, conformity or competition shape the outcomes of agent evolution.
+
+- Update / evaluation target: Team composition + social scaffolding.
+- Interpretation boundary: A study of conditions for team evolution, not evidence that every evolving team improves or becomes more decentralized.
 
 ### MASS (2026) · 2026-10
 
@@ -52,6 +92,17 @@ Uses persistent search trees and shared procedural lessons to coordinate agents 
 
 - Update / evaluation target: Data strategies + shared memory + target weights.
 - Interpretation boundary: Distinguish improvements to the target model from improvements to the research agents themselves.
+
+### MILO · 2026-09
+
+**MILO: Automated Harness Discovery via Orchestrated Multi-Agent Evolution**
+
+[Paper](https://arxiv.org/abs/2609.38349) · [PDF](https://arxiv.org/pdf/2609.38349)
+
+Combines island-based lineage memory, mutator agents and an orchestrator that adapts the search organization and curriculum.
+
+- Update / evaluation target: Harnesses + discovery strategy.
+- Interpretation boundary: Distinguish co-adaptation of search from demonstrated transferable improvement in the optimizer under matched budgets.
 
 ### RHI · 2026-07
 
@@ -77,7 +128,29 @@ Co-evolves proposer, solver and judge roles instantiated from one LLM through re
 
 <a id="workflow"></a>
 
-## Workflow and team evolution (6)
+## Workflow and team evolution (8)
+
+### Inherit-MAS · 2026-10
+
+**Inherit-MAS: Test-Time Evolution of Multi-Agent Systems through Workflow and Execution Inheritance**
+
+[Paper](https://arxiv.org/abs/2610.02396) · [PDF](https://arxiv.org/pdf/2610.02396)
+
+Refines workflows through validated edits and reuses stored execution results only when resolved requests and contexts match.
+
+- Update / evaluation target: Workflow edits + execution-result reuse.
+- Interpretation boundary: Execution caching and test-time workflow refinement do not establish cross-task improvement of the optimizer.
+
+### MANTA · 2026-07
+
+**MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2607.28527) · [PDF](https://arxiv.org/pdf/2607.28527)
+
+Initializes a topology from structural experience and applies bounded role, communication and validation updates during execution.
+
+- Update / evaluation target: Communication topology + roles.
+- Interpretation boundary: Inference-time structural adaptation is not automatically persistent recursive optimizer improvement.
 
 ### MAS-ZERO · 2025-05
 
@@ -147,7 +220,18 @@ Compiles declarative language-model programs against a task metric to optimize p
 
 <a id="experience"></a>
 
-## Experience, memory and skill inheritance (3)
+## Experience, memory and skill inheritance (5)
+
+### EvolveMAS · 2026-10
+
+**EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems**
+
+[Paper](https://arxiv.org/abs/2610.34450) · [PDF](https://arxiv.org/pdf/2610.34450)
+
+Pairs agents with MemoryAgents and combines within-episode memory updates with cross-episode distillation of partner profiles and interaction strategies.
+
+- Update / evaluation target: Per-agent memory governance + interaction knowledge.
+- Interpretation boundary: Parameter-free experience evolution does not by itself isolate improvement of the memory-update or optimization procedure.
 
 ### Skill-MAS · 2026-06
 
@@ -159,6 +243,17 @@ Distills experience from multiple trajectories into a reusable orchestration met
 
 - Update / evaluation target: Orchestration meta-skill.
 - Interpretation boundary: Persistent orchestration knowledge does not alone demonstrate an improving optimizer.
+
+### DecentMem · 2026-05
+
+**Self-Evolving Multi-Agent Systems via Decentralized Memory**
+
+[Paper](https://arxiv.org/abs/2605.22721) · [PDF](https://arxiv.org/pdf/2605.22721)
+
+Gives each agent exploitation and exploration memory pools, reweighted using staged judge feedback.
+
+- Update / evaluation target: Decentralized agent memories.
+- Interpretation boundary: Memory adaptation does not alone demonstrate that the improvement procedure itself improves.
 
 ### Voyager · 2023-05
 
@@ -184,7 +279,29 @@ Stores verbal reflections on feedback to improve decisions in subsequent trials 
 
 <a id="selfmod"></a>
 
-## Self-modification and model adaptation (6)
+## Self-modification and model adaptation (9)
+
+### Skill∞ · 2026-10
+
+**Skill∞: Recursive Self-Improvement for Agent Skill Optimization**
+
+[Paper](https://arxiv.org/abs/2610.35434) · [PDF](https://arxiv.org/pdf/2610.35434)
+
+Uses a meta-skill to optimize task skills and applies the same procedure to that meta-skill, including diagnosis, review and budget allocation.
+
+- Update / evaluation target: Task skills + optimizer meta-skill.
+- Interpretation boundary: Directly targets the improvement procedure; broad sustained gains and the contribution of multi-agent collaboration require separate evaluation.
+
+### Recursia · 2026-10
+
+**Learning to Compose: Recursive Self-Improvement of Shared Executable Stacks for Zero-Shot Long-Horizon Robot Manipulation**
+
+[Paper](https://arxiv.org/abs/2610.24464) · [PDF](https://arxiv.org/pdf/2610.24464)
+
+Improves a persistent executable stack using failure attribution, component repair and selection/regression gates, then freezes it for transfer.
+
+- Update / evaluation target: Shared tools, skill contracts and verifiers.
+- Interpretation boundary: A robot-programming transfer reference; shared components are not themselves a collaborating multi-agent system.
 
 ### AIDE² · 2026-09
 
@@ -207,6 +324,17 @@ Tracks harness interventions and sibling trajectories to connect harness evoluti
 
 - Update / evaluation target: Harness components + training records.
 - Interpretation boundary: The abstract evaluates one evolution round; sustained co-evolution remains a stronger claim.
+
+### HarnessForge · 2026-06
+
+**HarnessForge: Joint Harness and Policy Evolution for Adaptive Agent Systems**
+
+[Paper](https://arxiv.org/abs/2606.01779) · [PDF](https://arxiv.org/pdf/2606.01779) · [Code](https://github.com/mingju-c/HarnessForge)
+
+Co-evolves execution structure and reasoning policy through fault-guided harness tailoring and harness-conditioned policy alignment.
+
+- Update / evaluation target: Harness + reasoning policy.
+- Interpretation boundary: Joint system adaptation is relevant to RSI; sustained optimizer improvement requires separate evidence.
 
 ### SEAL · 2025-06
 
@@ -313,7 +441,18 @@ Iteratively generates feedback and revises an output using the same language mod
 
 <a id="evaluation"></a>
 
-## Benchmarks and evaluation (8)
+## Benchmarks and evaluation (9)
+
+### RSI-Forge · 2026-10
+
+**RSI-Forge: From Research Papers to Environments for Recursive Self-Improvement**
+
+[Paper](https://arxiv.org/abs/2610.09426) · [PDF](https://arxiv.org/pdf/2610.09426)
+
+Uses construction, reproduction and review agents to turn papers into executable research tasks and evaluates repeated attempts with inherited code and notes.
+
+- Update / evaluation target: Research environments + evaluators.
+- Interpretation boundary: An environment-construction and evaluation resource; repeated solution gains with frozen weights do not alone establish optimizer recursion.
 
 ### RSIBench-Data · 2026-07
 
